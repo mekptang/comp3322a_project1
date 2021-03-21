@@ -10,7 +10,7 @@
 
 <?php
     session_start();
-    $conn=mysqli_connect('sophia.cs.hku.hk', 'h3532746', 'kp7947', 'h3532746') or die ('Error! '.mysqli_connect_error($conn));
+    $conn=mysqli_connect('sophia.cs.hku.hk', 'h3532746', 'password', 'h3532746') or die ('Error! '.mysqli_connect_error($conn));
     if(isset($_POST['username']) && isset($_POST['password'])){
         $username = $_POST['username'];
         $password = $_POST['password'];
