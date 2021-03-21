@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Create Account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</head>
+
+<body style="margin: 0; padding: 0;">
+    <!-- <form method="POST" action="create.php">
+
+        <p>Username</p>
+        <input id="new_username" name="username" type="text" pattern="^[A-Za-z0-9]+" minlength="3" required>
+
+        <p>Password</p>
+        <input id="new_password" name="password" type="password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$" minlength="6"
+            maxlength="15" required>
+        
+
+        <button class="buttons" onclick="location.href='index.html'">Back</button>
+
+        <button id="signup" class="buttons" type="submit" name="Sign up">Sign Up</button>
+
+    </form> -->
+
+    <div class='formWrapper'>
+            <form method="POST" action="create.php">
+                <h1>Welcome to UB Cinema</h1>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input id="new_username" name="username" type="text" class="form-control" aria-describedby="emailHelp" placeholder="Desired Username" pattern="^[A-Za-z0-9]+" minlength="3" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input id="new_password" name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Your Password" pattern="^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$" minlength="6"
+                    maxlength="15" required>
+                </div>
+                <button id="signup" type="submit" class="btn btn-sm btn-primary">Sign Up</button>
+                <button type="button" class="btn btn-sm btn-primary" onclick="location.href='index.html'">Back</button>
+            </form>
+            </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var name = document.getElementById("new_username");
+            var password = document.getElementById("new_password");
+            
+            name.setCustomValidity("Please do not leave the fields empty");
+            password.setCustomValidity("Please do not leave the fields empty");
+
+            $('#new_username').on({
+                keyup: function(e) {
+                    e.target.setCustomValidity("");
+                    if (e.target.validity.valueMissing) {
+                        e.target.setCustomValidity("Please do not leave the fields empty");
+                    } else if (e.target.validity.tooShort) {
+                        e.target.setCustomValidity("Username must be longer than 3 characters");
+                    } else if (e.target.validity.patternMismatch) {
+                        e.target.setCustomValidity("Username can only consist of characters and numbers");
+                    }
+                }
+            });
+
+            $('#new_password').on({
+                keyup: function(e) {
+                    e.target.setCustomValidity("");
+                    if (!e.target.validity.valid) {
+                        e.target.setCustomValidity("The length of the password must be between 6 to 15 characters and it must consist of only alphanumerical characters with at least one alphabet and one numerical character");
+                    }
+                }
+            });
+        })
+        
+    </script>
+</body>
+
+</html>
