@@ -1,6 +1,8 @@
 # comp3322a_project1
 HKU COMP3322A Modern Technologies on World Wide Web - Individual Project 1
 
+Project I – Online cinema ticket ordering and movie reviewing
+
 Description:
 A simple Online cinema ticket ordering and movie reviewing system which used
 different techniques and technologies, including HTML, CSS, JavaScript, MySQL, AJAX, and PHP, 
